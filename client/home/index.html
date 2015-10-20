@@ -3,10 +3,11 @@
 </head>
 
 <body>
-  <form id="adicionar-lançamento">
-    <input type="date" name="data">
-    <input type="text" name="valor">
-    <input type="text" name="descricao">
-    <button>Cadastrar</button>
-  </form>
+  {{> quickForm collection="Lancamentos" id="inserirLancamento" type="insert" omitFields="['valor']"}}
+
+  {{#each lancamentos}}
+    {{data}}
+    {{valor}}
+    {{descricao}}
+  {{/each}}
 </body>

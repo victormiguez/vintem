@@ -1,5 +1,5 @@
-Template.body.events({
-  'submit #adicionar-lancamento': function (event) {
-    event.preventDefault();
+Template.body.helpers({
+  lancamentos: function () {
+    return Lancamentos.find({});
   }
 })
