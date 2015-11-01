@@ -1,6 +1,10 @@
+if (Meteor.user())
+  Meteor.subscribe('lancamentosPorUsuario', Meteor.userId());
+
 Template.body.helpers({
   lancamentos: function () {
-    return Lancamentos.find({});
+    if (Meteor.user())
+      return Lancamentos.find({usuarioId: Meteor.userId()});
   }
 })
 
